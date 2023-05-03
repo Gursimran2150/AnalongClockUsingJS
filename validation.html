@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        span{
+            color: red;
+            font-family: cursive;
+            font-size: 1rem;
+            border: 1px solid red;
+            background-color: rgb(250, 222, 222);
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+            display: none;
+        }
+        .form-val{
+            text-align: center;
+            padding: 2%;
+        }
+        input{
+            width: 30%;
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-family: cursive;
+            border-radius: 10px;
+            outline: none;
+            border: none;
+           
+            background-color: rgb(239, 239, 255);
+        }
+        input[type="submit"]{
+            display: block;
+            margin: auto;
+            margin-top: 15px;
+        }
+        label{
+            font-size: 1rem;
+            font-family: cursive;
+            display: inline-block;
+            padding-left: 15px;
+        }
+        button{
+            display: block;
+            margin: auto;
+            padding: 15px;
+            font-size: 1rem;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-val">
+        
+            <label for="">Name:</label>
+            <input type="text" placeholder="Enter name" id="name1" onkeypress="formValidation()">
+            <span id="nameV"></span>
+
+            <button >Submit</button>
+
+        
+    </div>
+
+    <script>
+       
+        function formValidation(){
+            var name=document.getElementById("name1");
+            var nameV=document.getElementById("nameV");
+            var value=name.value;
+            console.log(value);
+            if(value=="")
+            {
+                nameV.style.display="inline-block";
+                nameV.innerHTML="Name can't be empty!";
+                
+            }
+            else if(value.toString().length>5){
+                nameV.style.display="none";
+                // nameV.innerHTML="Name can't be empty!";
+            }
+
+            
+            
+        }
+        
+        
+    </script>
+</body>
+</html>
